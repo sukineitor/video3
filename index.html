@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NardVid Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+</head>
+<body>
+    <header>
+        <a href="https://nardvid.netlify.app" target="_blank">
+        <img src="logo.png" alt="NardVid Logo" class="logo"></a>
+    </header>
+    <main>
+        <div class="video-container">
+            <div id="player-wrapper">
+                <div id="player"></div>
+            </div>
+            <div class="controls">
+                <div class="control-group">
+                    <button id="playPauseBtn" class="control-btn" aria-label="Reproducir o pausar">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <span id="timeDisplay" class="time-display">0:00 / 0:00</span>
+                </div>
+                <input type="range" id="progressBar" class="progress" min="0" max="100" value="0" aria-label="Progreso del video">
+                <div class="control-group">
+                    <div class="volume-control">
+                        <button id="muteBtn" class="control-btn" aria-label="Silenciar o activar sonido">
+                            <i id="volumeIcon" class="fas fa-volume-up"></i>
+                        </button>
+                        <input type="range" id="volumeBar" class="volume" min="0" max="100" value="100" aria-label="Control de volumen">
+                    </div>
+                    <select id="qualitySelect" class="quality-select" aria-label="Seleccionar calidad de video">
+                        <option value="small">360p</option>
+                        <option value="medium" selected>480p</option>
+                        <option value="large">720p</option>
+                        <option value="hd720">HD</option>
+                    </select>
+                    <button id="fullscreenBtn" class="control-btn" aria-label="Pantalla completa">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
+</body>
+</html>
